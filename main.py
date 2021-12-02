@@ -22,3 +22,22 @@ finLoc = depth*horizontal
 print("Final Location: ", finLoc)
 
 
+##### Part 2
+
+horizontal = 0
+depth = 0
+aim = 0
+
+for i,change in enumerate(sweeps):
+    if change['direction'] == 'd':
+        aim = aim + change['value']
+    if change['direction'] == 'u':
+        aim = aim - change['value']
+    if change['direction'] == 'f':
+        horizontal = horizontal + change['value']
+        depth = depth + aim * change['value']
+
+print("Final Horizontal: ", horizontal)
+print("Final Depth: ", depth)
+finLoc = depth*horizontal
+print("Final Location: ", finLoc)     
